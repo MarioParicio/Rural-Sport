@@ -30,40 +30,51 @@ public class RegistrarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
 
+
+        // Referenciamos los textView creados con los que tenemos de la interfaz
         etEmail = findViewById(R.id.EmailEditTextRegistrar);
         etPassword = findViewById(R.id.ContrasenaEditTextRegistrar);
         btnRegistrar = findViewById(R.id.RegistrarRegistrarButton);
 
+        // Instanciamos el FirebaseAuth
         auth = FirebaseAuth.getInstance();
 
+        // Registramos el usuario al hacer clic en el boton
         btnRegistrar.setOnClickListener(view -> registrarConEmailPassword());
 
     }
 
-
     private void registrarConEmailPassword() {
-
+        // Guardamos en strings los valores de los campos de texto
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
 
+        // Si los campos no están vacíos
         if (!email.isEmpty() && !password.isEmpty()) {
 
+            // Llamo al metodo de crear usuario con email y contraseña
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    // Si el resultado es satisfactorio, informamos al usuario y vamos a la pantalla de login
                     if (task.isSuccessful()) {
                         Log.d("FIREBASE-iferrerf", "createUserWithEmail:success");
                         Toast.makeText(RegistrarActivity.this, "El usuario ha sido creado correctamente mediante FirebaseLogin", Toast.LENGTH_SHORT).show();
                         iraLoginActivity(email, password);
                     } else {
+                        // Si no es satisfactorio, informamos al usuario
                         Log.w("FIREBASE-iferrerf", "createUserWithEmail:failure");
                         Toast.makeText(RegistrarActivity.this, "Error al registrar usuario", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
+
+        }else{
+            Toast.makeText(RegistrarActivity.this, "Los campos no pueden estar vacíos", Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Metodo que crea un activity Login nuevo al que le pasamos el email y contraseña
     private void iraLoginActivity(String email, String password) {
         Intent i = new Intent(this, LoginActivity.class);
         i.putExtra("email", email);

@@ -57,13 +57,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Referenciamos cada textView y button con su elemento correspondiente
         etEmail = findViewById(R.id.EmailEditText);
         etPassword = findViewById(R.id.ContrasenaEditText);
         btnRegistrar = findViewById(R.id.RegistrarButton);
         btnLogin = findViewById(R.id.AccederButton);
         btnLoginGoogle = findViewById(R.id.GoogleButton);
 
-
+        // Cargamos los textView con la informacion de email y contraseña que nos llega del Registrar Activity
         etEmail.setText(getIntent().getStringExtra("email"));
         etPassword.setText(getIntent().getStringExtra("contraseña"));
 
@@ -77,14 +78,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void verSiEstaLogueado() {
-
+        // Comprobamos si el usuario está logueado mediante las SharedPreferences
         SharedPreferences sesion = getSharedPreferences("sesion", Context.MODE_PRIVATE);
         String _email = sesion.getString("email", null);
 
+        // Si el email es distinto de nulo, vamos al HomeActivity
         if (_email != null) {
             iraHomeActivity(_email);
         }
     }
+
 
     private void iniciarAnalytics() {
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -95,8 +98,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void iniciarAuthentication() {
+        // Instanciamos FirebaseAuth
         auth = FirebaseAuth.getInstance();
 
+        // Realizamos distintas acciones dependiendo de que boton hacemos clic
         btnRegistrar.setOnClickListener(view -> {
             Intent intent = new Intent(LoginActivity.this, RegistrarActivity.class);
             startActivity(intent);
@@ -106,11 +111,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loguearConGoogle() {
-        // Al hacer click en el boton de login con Google:
+
+        // Recogemos la informacion del logueo con Google
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
+
         // Nos creamos el GoogleSignIn Client
         googleSignInClient = getClient(LoginActivity.this, gso);
         Intent signInIntent = googleSignInClient.getSignInIntent();
@@ -124,12 +131,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        // Si el codigo del cliente de google coincide
         if (requestCode == 100){
-            // Esto significa que venimos de loguearnos con Google
+            // Significa que venimos de loguearnos con Google
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
                 // La autenticacion con Google ha sido exitosa
+                GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.w("FIREBASE", "firebasAuthConGoogle: "+ account.getId());
                 firebaseAuthConGoogle(account.getIdToken());
             } catch (ApiException e){
@@ -148,7 +156,6 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             FirebaseUser user = auth.getCurrentUser();
-                            // Voy a HomeActivity
                             iraHomeActivity(user.getEmail());
                         } else {
                             Log.w("FIREBASE", "Logueo con Google: Fallo");
@@ -166,12 +173,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
+                    // Si el logueo es correcto, abrimos el activityHome
                     Log.d("FIREBASE-iferrerf", "signInUserWithEmail:success");
-                    FirebaseUser user = auth.getCurrentUser();
                     iraHomeActivity(_email);
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // Si el logueo falla, informamos al usuario
                     Log.w("FIREBASE-iferrerf", "signInUserWithEmail:failure", task.getException());
                     Toast.makeText(LoginActivity.this, "Error al loguear usuario", Toast.LENGTH_SHORT).show();
                 }
@@ -182,6 +188,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void iraHomeActivity(String email) {
+        // Metodo que crea un activityMain nuevo
         Intent i = new Intent(LoginActivity.this, MainActivity.class);
         i.putExtra("email", email);
         startActivity(i);
