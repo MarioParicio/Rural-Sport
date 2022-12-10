@@ -36,7 +36,7 @@ public class LocationFragment extends Fragment {
         @Override
         public void onMapReady(GoogleMap googleMap) {
             LatLng zoom = new LatLng(40.547240, -0.348118);
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(zoom,11.7f));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(zoom,11.3f));
 
             LatLng piscinaMirambel = new LatLng(40.591093, -0.341594);
             LatLng pistasMirambel = new LatLng(40.591989, -0.342386);
@@ -54,7 +54,13 @@ public class LocationFragment extends Fragment {
             googleMap.addMarker(new MarkerOptions().position(piscinaIglesuela).title("Piscina Municipal"));
             googleMap.addMarker(new MarkerOptions().position(pabellonIglesuela).title("Pabellon Polideportivo"));
 
+
+
+
         }
+
+
+
 
     };
 

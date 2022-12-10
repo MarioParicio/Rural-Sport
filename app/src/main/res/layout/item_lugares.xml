@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c6"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgLugar_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/wpt"/>
+
+    <TextView
+        android:id="@+id/nombre_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Nombre"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/c1"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/localidad_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Localidad"
+        android:textColor="@color/c1"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/tipo_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Tipo"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/c1"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/ambiente_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Ambiente"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/c1"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/horario_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Horario"
+        android:textColor="@color/c1"
+        android:layout_marginBottom="15dp"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

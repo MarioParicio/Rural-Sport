@@ -1,24 +1,28 @@
 package org.iesch.myapplication.ui.padel;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
+import org.iesch.myapplication.R;
 import org.iesch.myapplication.databinding.FragmentPadelBinding;
+import org.iesch.myapplication.ui.location.Lugar;
 
+import java.util.ArrayList;
 
 
 public class padelFragment extends Fragment {
 
     private FragmentPadelBinding binding;
+
+    private ListView lvLugares;
+    private ListaLugaresAdapter adaptador;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,16 +61,32 @@ public class padelFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        padelViewModel padelViewModel =
-                new ViewModelProvider(this).get(padelViewModel.class);
-
         binding = FragmentPadelBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textPadel;
-        padelViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        lvLugares = binding.lvLista;
+
+        adaptador = new ListaLugaresAdapter(obtenerListaLugares(), getContext());
+
+        lvLugares.setAdapter(adaptador);
 
         return root;
+    }
+
+    private ArrayList<Lugar> obtenerListaLugares() {
+
+        ArrayList<Lugar> listaLugares = new ArrayList<>();
+
+        listaLugares.add(new Lugar("Pistas deportivas", "Mirambel", "8:00 - 23:00", "Todo el año", "Exterior", R.drawable.padelmirambel));
+        listaLugares.add(new Lugar("Pista de tenis y fronton", "Cantavieja", "Sin horario establecido", "Todo el año", "Exterior",  R.drawable.tenis2));
+        listaLugares.add(new Lugar("Pista Padel", "Iglesuela del Cid", "Sin horario establecido", "Todo el año", "Exterior",  R.drawable.pistaiglesuela));
+        listaLugares.add(new Lugar("Polideportivo", "Cantavieja", "Sin horario establecido", "Todo el año", "Interior",  R.drawable.polideportivocantavieja));
+        listaLugares.add(new Lugar("Polideportivo", "Iglesuela del Cid", "Sin horario establecido", "Todo el año", "Interior",  R.drawable.polideportivoiglesuela));
+        listaLugares.add(new Lugar("Piscina municipal", "Mirambel", "10:00 - 21:00", "Temporada verano", "Exterior", R.drawable.piscina1));
+        listaLugares.add(new Lugar("Piscina municipal", "Cantavieja", "11:00 - 20:00", "Temporada verano", "Exterior", R.drawable.piscina4));
+        listaLugares.add(new Lugar("Piscina municipal", "Iglesuela del Cid", "11:00 - 21:00", "Temporada verano", "Exterior",  R.drawable.piscina3));
+
+        return listaLugares;
     }
 
     @Override
