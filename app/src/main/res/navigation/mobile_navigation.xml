@@ -6,21 +6,21 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_calendario"
         android:name="org.iesch.myapplication.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_calendario"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="org.iesch.myapplication.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_ranking"
+        android:name="org.iesch.myapplication.ui.gallery.RankingFragment"
+        android:label="@string/menu_ranking"
+        tools:layout="@layout/fragment_ranking" />
 
     <fragment
         android:id="@+id/nav_location"
         android:name="org.iesch.myapplication.ui.location.LocationFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_maps"
         tools:layout="@layout/fragment_location" />
 
     <fragment

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_location, R.id.nav_padel)
+                R.id.nav_home, R.id.nav_ranking, R.id.nav_location, R.id.nav_padel)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sesion = getSharedPreferences("sesion", Context.MODE_PRIVATE);
         SharedPreferences.Editor Obj_Editor = sesion.edit();
         Obj_Editor.putString("email", email);
-        //Obj_Editor.putString("metodo", metodo);
         Obj_Editor.apply();
     }
 

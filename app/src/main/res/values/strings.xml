@@ -7,12 +7,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_calendario">Calendario</string>
+    <string name="menu_ranking">Ranking</string>
+    <string name="menu_maps">Mapas</string>
     <string name="calendario">Calendario</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="registrar">Registrar</string>
     <string name="acceder">Acceder</string>
     <string name="login_con_google">Login con Google</string>
@@ -21,7 +20,7 @@
     <string name="salir">Salir</string>
     <string name="padel">Padel</string>
     <string name="localizacion">Localizacion</string>
-    <string name="galeria">Galería</string>
+    <string name="ranking">Ranking</string>
     <string name="title_activity_registrar">RegistrarActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
