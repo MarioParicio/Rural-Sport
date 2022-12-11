@@ -31,7 +31,7 @@
             android:id="@+id/UserNameEditTextRegistrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Apodo"
+            android:hint="@string/apodo"
             android:textColorHint="@color/c1"
             android:textColor="@color/c1"
             android:inputType="text"

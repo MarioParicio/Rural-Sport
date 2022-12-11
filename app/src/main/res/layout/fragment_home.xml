@@ -28,7 +28,7 @@
                 android:layout_weight="1"
                 android:gravity="bottom"
                 android:padding="10dp"
-                android:text="RURAL SPORT"
+                android:text="@string/rural_sport"
                 android:textColor="@color/c1"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -41,7 +41,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="top"
-                android:text="  App de actividades deportivas "
+                android:text="@string/app_de_actividades_deportivas"
                 android:textColor="@color/c2"
                 android:textSize="18dp" />
 
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rural Sport es el primer paso para disfrutar las tardes con amigos"
+                android:text="@string/titulo1"
                 android:gravity="bottom"
                 android:layout_margin="10dp"
                 android:textColor="@color/c1"
@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Conoce los mejores sitios donde practicar deporte en nuestra zona. \nDisfruta de los espacios nuevos y de las últimas mejoras"
+                android:text="@string/texto1"
                 android:gravity="start"
                 android:layout_margin="10dp"
                 android:textColor="@color/c2"
@@ -129,7 +129,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="bottom"
-                android:text="Te informamos de las localizaciones y actividades disponibles"
+                android:text="@string/titulo2"
                 android:textColor="@color/c1"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -141,7 +141,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:text="Observa las instalaciones, su localizacion y un ranking de nuestros mejores participantes."
+                android:text="@string/texto2"
                 android:textColor="@color/c2"
                 android:textSize="14dp" />
 

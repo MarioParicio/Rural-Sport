@@ -10,21 +10,32 @@
     <string name="menu_home">Inicio</string>
     <string name="menu_ranking">Ranking</string>
     <string name="menu_maps">Localizacion de pistas deportivas</string>
-    <string name="home">Inicio</string>
 
+    <string name="title_activity_registrar">RegistrarActivity</string>
+
+
+    <!-- LOGIN / REGISTRAR -->
+    <string name="apodo">Apodo</string>
     <string name="registrar">Registrar</string>
     <string name="acceder">Acceder</string>
     <string name="login_con_google">Login con Google</string>
     <string name="email">Email</string>
     <string name="contrasena">Contraseña</string>
-    <string name="salir">Salir</string>
+
+    <!-- MENU NAVEGACION -->
+    <string name="home">Inicio</string>
     <string name="pistas">Lista de pistas</string>
     <string name="localizacion">Localizacion</string>
     <string name="ranking">Ranking</string>
-    <string name="title_activity_registrar">RegistrarActivity</string>
+    <string name="salir">Salir</string>
 
-
-
+    <!-- INICIO -->
+    <string name="rural_sport">RURAL SPORT</string>
+    <string name="app_de_actividades_deportivas">App de actividades deportivas</string>
+    <string name="titulo1">Rural Sport es el primer paso para disfrutar las tardes con amigos</string>
+    <string name="texto1">Conoce los mejores sitios donde practicar deporte en nuestra zona. \nDisfruta de los espacios nuevos y de las últimas mejoras</string>
+    <string name="titulo2">Te informamos de las localizaciones y actividades disponibles</string>
+    <string name="texto2">Observa las instalaciones, su localizacion y un ranking de nuestros mejores participantes.</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">Primer Fragment</string>
@@ -33,4 +44,6 @@
     <string name="previous">Anterior</string>
     <string name="hello_first_fragment">Hola primer fragmento</string>
     <string name="hello_second_fragment">Hola segundo fragmento Arg: %1$s</string>
+
+
 </resources>

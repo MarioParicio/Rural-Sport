@@ -91,6 +91,7 @@ public class LugaresDeportivosFragment extends Fragment {
         listaLugares.add(new Lugar("Piscina municipal", "Cantavieja", "11:00 - 20:00", "Temporada verano", "Exterior", R.drawable.piscina4));
         listaLugares.add(new Lugar("Piscina municipal", "Iglesuela del Cid", "11:00 - 21:00", "Temporada verano", "Exterior",  R.drawable.piscina3));
 
+        // Devuelvo la lista con los lugares
         return listaLugares;
     }
 

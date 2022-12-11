@@ -40,7 +40,6 @@ public class Lugar {
         return ambiente;
     }
 
-
     public int getImagenId() {
         return imagenId;
     }

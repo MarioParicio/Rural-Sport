@@ -20,8 +20,6 @@ public class Ranking {
         this.imageUrl = imageUrl;
     }
 
-    public Ranking() {
-    }
 
     @Override
     public String toString() {
@@ -38,39 +36,20 @@ public class Ranking {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSurname() {
         return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public String getRanking() {
         return ranking;
     }
 
-    public void setRanking(String ranking) {
-        this.ranking = ranking;
-    }
-
     public String getNationalityUrl() {
         return nationalityUrl;
-    }
-
-    public void setNationalityUrl(String nationalityUrl) {
-        this.nationalityUrl = nationalityUrl;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 }

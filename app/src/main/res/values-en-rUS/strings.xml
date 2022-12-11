@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">RURAL SPORT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close vavigation drawer</string>
+    <string name="nav_header_title">RURAL SPORT</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_ranking">Ranking</string>
+    <string name="menu_maps">Sports curts locations</string>
+
+    <string name="title_activity_registrar">RegisterActivity</string>
+
+
+    <!-- LOGIN / REGISTRAR -->
+    <string name="apodo">Nickname</string>
+    <string name="registrar">Register</string>
+    <string name="acceder">To access</string>
+    <string name="login_con_google">Login with Google</string>
+    <string name="email">Email</string>
+    <string name="contrasena">Password</string>
+
+    <!-- MENU NAVEGACION -->
+    <string name="home">Home</string>
+    <string name="pistas">Courts list</string>
+    <string name="localizacion">Localitation</string>
+    <string name="ranking">Ranking</string>
+    <string name="salir">Exit</string>
+
+    <!-- INICIO -->
+    <string name="rural_sport">RURAL SPORT</string>
+    <string name="app_de_actividades_deportivas">Sport Activities App</string>
+    <string name="titulo1">Rural Sport is firts step to enjoy the evenings with your friends</string>
+    <string name="texto1">Meet the best places where to practice sport in our area. \nEnjoy the new spaces and the latest improvements</string>
+    <string name="titulo2">We inform youy about the localitacions and available activities</string>
+    <string name="texto2">Observe the instalations, the localitations and the ranking about position of the best players with the app</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment Arg: %1$s</string>
+
+
+</resources>
