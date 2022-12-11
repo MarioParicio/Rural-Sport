@@ -1,4 +1,4 @@
-package org.iesch.myapplication.ui.gallery;
+package org.iesch.myapplication.ui.ranking;
 
 import com.google.gson.annotations.SerializedName;
 

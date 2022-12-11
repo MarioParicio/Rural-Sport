@@ -1,4 +1,4 @@
-package org.iesch.myapplication.ui.gallery;
+package org.iesch.myapplication.ui.ranking;
 
 import android.os.Bundle;
 import android.util.Log;

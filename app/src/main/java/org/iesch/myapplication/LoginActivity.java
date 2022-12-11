@@ -1,7 +1,5 @@
 package org.iesch.myapplication;
 
-import static android.content.ContentValues.TAG;
-
 import static com.google.android.gms.auth.api.signin.GoogleSignIn.*;
 
 import androidx.annotation.NonNull;
@@ -17,8 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
-import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -32,8 +28,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-
-import org.iesch.myapplication.ui.home.HomeFragment;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_calendario"
-        android:name="org.iesch.myapplication.ui.home.HomeFragment"
+        android:name="org.iesch.myapplication.ui.calendario.HomeFragment"
         android:label="@string/menu_calendario"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_ranking"
-        android:name="org.iesch.myapplication.ui.gallery.RankingFragment"
+        android:name="org.iesch.myapplication.ui.ranking.RankingFragment"
         android:label="@string/menu_ranking"
         tools:layout="@layout/fragment_ranking" />
 
