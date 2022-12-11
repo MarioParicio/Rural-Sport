@@ -20,14 +20,17 @@ import java.util.List;
 
 public class RankingPadelAdapter extends RecyclerView.Adapter<RankingPadelAdapter.ViewHolder> {
 
+    // Declaramos los elementos necesarios
     private List<Ranking> rankingList;
     private Context context;
 
+    // Constructor donde definimos el contexto y una nueva lista de ranking
     public RankingPadelAdapter(Context context) {
         this.context = context;
         this.rankingList = new ArrayList<>();
     }
 
+    // Metodos necesarios al extender de RecyclerView.Adapter
     @NonNull
     @Override
     public RankingPadelAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,14 +38,19 @@ public class RankingPadelAdapter extends RecyclerView.Adapter<RankingPadelAdapte
         return new ViewHolder(view);
     }
 
+    // Este método se ejecuta por cada objeto que devuelve la API
     @Override
     public void onBindViewHolder(@NonNull RankingPadelAdapter.ViewHolder holder, int position) {
+        // Asignamos al objeto ranking la posición del elemento dentro del conjunto de datos del adaptador.
         Ranking ranking = rankingList.get(position);
 
+
+        // Asignamos los datos al objeto
         holder.nombreTextView.setText(ranking.getName());
         holder.apellidoTextView.setText(ranking.getSurname());
         holder.rankingTextView.setText(ranking.getRanking());
 
+        // Hacemos uso de la librería Glide para rescatar las imagenes de la API
         Glide.with(context)
                 .load(ranking.getImageUrl())
                 .centerCrop()
@@ -64,12 +72,14 @@ public class RankingPadelAdapter extends RecyclerView.Adapter<RankingPadelAdapte
 
     public void adicionarRanking(List<Ranking> listaRanking) {
         this.rankingList.addAll(listaRanking);
-        // Con este metodo actualizaremos el recyclerView en la pantalla
+        // Actualizamos el recyclerView en la pantalla
         notifyDataSetChanged();
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        // Creamos los elementos de la interfaz
         private ImageView imageView;
         private ImageView nacionalidadImageView;
         private TextView nombreTextView;
@@ -80,6 +90,7 @@ public class RankingPadelAdapter extends RecyclerView.Adapter<RankingPadelAdapte
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            // Relacionamos cada elemento de la interfaz
             imageView = itemView.findViewById(R.id.padel_ranking_item_image_ImageView);
             nombreTextView = itemView.findViewById(R.id.padel_ranking_item_name_TexView);
             apellidoTextView = itemView.findViewById(R.id.padel_ranking_item_surname_TexView);

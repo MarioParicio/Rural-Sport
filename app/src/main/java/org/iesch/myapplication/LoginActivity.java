@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Si el email es distinto de nulo, vamos al HomeActivity
         if (_email != null) {
-            iraHomeActivity();
+            iraHomeActivity(_email);
         }
     }
 
@@ -151,17 +151,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void firebaseAuthConGoogle(String idToken) {
+        // Credencial con la que Firebase autentica a un usuario
+        // Le pasamos la credencial de google a traves del token
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        // Si la credencial es correcta, creamos el usuario en Firebase
                         if (task.isSuccessful()) {
                             FirebaseUser user = auth.getCurrentUser();
+                            // Guardamos el email del usuario
                             guardarInfoDeLogin(user.getEmail());
-                            iraHomeActivity();
+                            // Abrimos el activity home
+                            iraHomeActivity(user.getEmail());
                         } else {
                             Log.w("FIREBASE-iferrerf", "Logueo con Google: Fallo");
+                            Toast.makeText(LoginActivity.this, "Error al loguear usuario con Google", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -169,17 +175,20 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void loguearConEmailyPassword() {
+        // Guardamos en Strings el email y constraseña de los campos de texto
         String _email = etEmail.getText().toString();
         String _password = etPassword.getText().toString();
 
+        // Logueo mediante email y password
         auth.signInWithEmailAndPassword(_email, _password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                // Si Firebase contiene el email y constraseña asociados, será satisfactorio
                 if (task.isSuccessful()) {
-                    // Si el logueo es correcto, abrimos el activityHome
+                    // Si el logueo es correcto, abrimos el activityHome y guardamos la informacion del usuario
                     Log.d("FIREBASE-iferrerf", "signInUserWithEmail:success");
                     guardarInfoDeLogin(_email);
-                    iraHomeActivity();
+                    iraHomeActivity(_email);
                 } else {
                     // Si el logueo falla, informamos al usuario
                     Log.w("FIREBASE-iferrerf", "signInUserWithEmail:failure", task.getException());
@@ -190,10 +199,11 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void iraHomeActivity() {
+    private void iraHomeActivity(String user) {
         // Metodo que crea un activityMain nuevo
         Intent i = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(i);
+        Toast.makeText(LoginActivity.this, "Bienvenido " + "\b"+user, Toast.LENGTH_SHORT).show();
     }
 
 

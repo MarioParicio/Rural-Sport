@@ -38,7 +38,7 @@
                 style="@style/TextAppearance.Material3.ActionBar.Subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:gravity="top"
                 android:text="@string/app_de_actividades_deportivas"
@@ -57,7 +57,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="12dp"
         android:background="@color/c1"/>
 
     <LinearLayout
@@ -108,7 +108,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="12dp"
         android:background="@color/c1"/>
 
     <LinearLayout
