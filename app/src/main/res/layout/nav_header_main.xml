@@ -30,20 +30,13 @@
         <TextView
             android:id="@+id/UserNameTextView"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
             android:paddingStart="15dp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
             android:text="@string/nav_header_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="16dp" />
 
-
-        <TextView
-            android:id="@+id/EmailUserTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:paddingStart="15dp"
-            android:text="@string/nav_header_subtitle" />
 
 
 

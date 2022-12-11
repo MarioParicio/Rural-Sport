@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">RURAL SPORT</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="navigation_drawer_open">Abrir diseño navegación</string>
+    <string name="navigation_drawer_close">Cerra diseño navegación</string>
+    <string name="nav_header_title">RURAL SPORT</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Herramientas</string>
 
-    <string name="menu_calendario">Calendario</string>
+    <string name="menu_home">Inicio</string>
     <string name="menu_ranking">Ranking</string>
-    <string name="menu_maps">Mapas</string>
-    <string name="calendario">Calendario</string>
+    <string name="menu_maps">Localizacion de pistas deportivas</string>
+    <string name="home">Inicio</string>
 
     <string name="registrar">Registrar</string>
     <string name="acceder">Acceder</string>
@@ -18,16 +18,19 @@
     <string name="email">Email</string>
     <string name="contrasena">Contraseña</string>
     <string name="salir">Salir</string>
-    <string name="padel">Padel</string>
+    <string name="pistas">Lista de pistas</string>
     <string name="localizacion">Localizacion</string>
     <string name="ranking">Ranking</string>
     <string name="title_activity_registrar">RegistrarActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Primer Fragment</string>
+    <string name="second_fragment_label">Segundo Fragment</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="hello_first_fragment">Hola primer fragmento</string>
+    <string name="hello_second_fragment">Hola segundo fragmento Arg: %1$s</string>
 </resources>

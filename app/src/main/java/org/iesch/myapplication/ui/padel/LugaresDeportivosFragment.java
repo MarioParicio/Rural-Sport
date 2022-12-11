@@ -10,16 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import org.iesch.myapplication.R;
-import org.iesch.myapplication.databinding.FragmentPadelBinding;
+import org.iesch.myapplication.databinding.FragmentLugaresDeportivosBinding;
 import org.iesch.myapplication.ui.location.Lugar;
 
 import java.util.ArrayList;
 
 
-public class padelFragment extends Fragment {
+public class LugaresDeportivosFragment extends Fragment {
 
-    private FragmentPadelBinding binding;
+    private FragmentLugaresDeportivosBinding binding;
 
+    // Creo los elementos que necesito
     private ListView lvLugares;
     private ListaLugaresAdapter adaptador;
 
@@ -33,13 +34,13 @@ public class padelFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public padelFragment() {
+    public LugaresDeportivosFragment() {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static padelFragment newInstance(String param1, String param2) {
-        padelFragment fragment = new padelFragment();
+    public static LugaresDeportivosFragment newInstance(String param1, String param2) {
+        LugaresDeportivosFragment fragment = new LugaresDeportivosFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,22 +62,26 @@ public class padelFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = FragmentPadelBinding.inflate(inflater, container, false);
+        binding = FragmentLugaresDeportivosBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        // Asigno el ListView del xml al que he creado aqui
         lvLugares = binding.lvLista;
 
+        // Me creo el adaptador
         adaptador = new ListaLugaresAdapter(obtenerListaLugares(), getContext());
 
+        // asigno el adaptador al ListView
         lvLugares.setAdapter(adaptador);
 
         return root;
     }
 
     private ArrayList<Lugar> obtenerListaLugares() {
-
+        // Creo un arrayList de lugares
         ArrayList<Lugar> listaLugares = new ArrayList<>();
 
+        // Meto a fuego cada lugar en el arrayList
         listaLugares.add(new Lugar("Pistas deportivas", "Mirambel", "8:00 - 23:00", "Todo el año", "Exterior", R.drawable.padelmirambel));
         listaLugares.add(new Lugar("Pista de tenis y fronton", "Cantavieja", "Sin horario establecido", "Todo el año", "Exterior",  R.drawable.tenis2));
         listaLugares.add(new Lugar("Pista Padel", "Iglesuela del Cid", "Sin horario establecido", "Todo el año", "Exterior",  R.drawable.pistaiglesuela));

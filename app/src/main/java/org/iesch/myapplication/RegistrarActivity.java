@@ -19,10 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegistrarActivity extends AppCompatActivity {
 
     TextView etEmail, etPassword;
-
     Button btnRegistrar;
 
-
+    // Elemento de firebase para crear usuarios
     private FirebaseAuth auth;
 
     @Override

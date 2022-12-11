@@ -15,14 +15,19 @@ import java.util.ArrayList;
 
 public class ListaLugaresAdapter extends BaseAdapter {
 
+    // Creo los elementos que necesito
     private ArrayList<Lugar> listaLugares;
     private Context context;
 
+    // Constructor al que le paso la lista de lugares y el contexto
     public ListaLugaresAdapter(ArrayList<Lugar> listaLugares, Context context) {
         this.listaLugares = listaLugares;
         this.context = context;
     }
 
+
+    // Metodo necesarios al extender de BaseAdapter
+    // Los modificamos para que sean aptos a nuestro programa
     @Override
     public int getCount() {
         return listaLugares.size();
@@ -41,10 +46,14 @@ public class ListaLugaresAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
+        // Metodo más importante
+        // Creo un objeto lugar cada vez que entra al método
         Lugar lugar = (Lugar) getItem(i);
 
+        // Inflamos en el contexto el layout que tiene el formato de cada lugar
         view = LayoutInflater.from(context).inflate(R.layout.item_lugares, null);
 
+        // Creamos los mismos elementos que en el layout y los enlazamos con su correspondiente
         ImageView imgLugar = (ImageView) view.findViewById(R.id.imgLugar_ImageView);
         TextView tvNombre = (TextView) view.findViewById(R.id.nombre_TextView);
         TextView tvLocalidad = (TextView) view.findViewById(R.id.localidad_TextView);
@@ -52,6 +61,7 @@ public class ListaLugaresAdapter extends BaseAdapter {
         TextView tvTipo = (TextView) view.findViewById(R.id.tipo_TextView);
         TextView tvAmbiente = (TextView) view.findViewById(R.id.ambiente_TextView);
 
+        // Damos valor a cada elemento
         imgLugar.setImageResource(lugar.getImagenId());
         tvNombre.setText(lugar.getNombre());
         tvLocalidad.setText(lugar.getLocalidad());

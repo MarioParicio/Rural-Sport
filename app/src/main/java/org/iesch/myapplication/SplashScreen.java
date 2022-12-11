@@ -13,6 +13,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        // Activity que dura 3 segundos y que abre el activity de Login
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
